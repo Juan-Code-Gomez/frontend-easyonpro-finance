@@ -5,6 +5,8 @@ import { COLORS, FONTS } from '../constants/theme';
 
 import DashboardScreen from '../screens/Dashboard/DashboardScreen';
 import TransactionsScreen from '../screens/Transactions/TransactionsScreen';
+import DebtsScreen from '../screens/Debts/DebtsScreen';
+import FinancingsScreen from '../screens/Financing/FinancingsScreen';
 
 const Tab = createBottomTabNavigator();
 
@@ -48,7 +50,22 @@ export default function MainTabs() {
           tabBarIcon: ({ focused }) => <TabIcon emoji="💳" focused={focused} />,
         }}
       />
-      {/* Se irán agregando más tabs en las siguientes fases */}
+      <Tab.Screen
+        name="Debts"
+        component={DebtsScreen}
+        options={{
+          tabBarLabel: 'Deudas',
+          tabBarIcon: ({ focused }) => <TabIcon emoji="💳" focused={focused} />,
+        }}
+      />
+      <Tab.Screen
+        name="Financings"
+        component={FinancingsScreen}
+        options={{
+          tabBarLabel: 'Financiam.',
+          tabBarIcon: ({ focused }) => <TabIcon emoji="📦" focused={focused} />,
+        }}
+      />
     </Tab.Navigator>
   );
 }

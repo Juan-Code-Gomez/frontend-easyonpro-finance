@@ -7,6 +7,9 @@ import LoginScreen from '../screens/Auth/LoginScreen';
 import RegisterScreen from '../screens/Auth/RegisterScreen';
 import ForgotPasswordScreen from '../screens/Auth/ForgotPasswordScreen';
 import NewTransactionScreen from '../screens/Transactions/NewTransactionScreen';
+import NewDebtScreen from '../screens/Debts/NewDebtScreen';
+import NewFinancingScreen from '../screens/Financing/NewFinancingScreen';
+import FinancingDetailScreen from '../screens/Financing/FinancingDetailScreen';
 import MainTabs from './MainTabs';
 import { COLORS } from '../constants/theme';
 import useAuthStore from '../store/authStore';
@@ -47,6 +50,9 @@ export default function AppNavigator() {
           <>
             <Stack.Screen name="Main" component={MainTabs} />
             <Stack.Screen name="NewTransaction" component={NewTransactionScreen} options={{ presentation: 'modal' }} />
+            <Stack.Screen name="NewDebt" component={NewDebtScreen} options={{ presentation: 'modal' }} />
+            <Stack.Screen name="NewFinancing" component={NewFinancingScreen} options={{ presentation: 'modal' }} />
+            <Stack.Screen name="FinancingDetail" component={FinancingDetailScreen} />
           </>
         ) : (
           <>

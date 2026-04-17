@@ -62,6 +62,9 @@ export default function DashboardScreen({ navigation }) {
           <Text style={styles.greeting}>Hola, {user?.name?.split(' ')[0]} 👋</Text>
           <Text style={styles.subGreeting}>Aquí está tu resumen financiero</Text>
         </View>
+        <TouchableOpacity style={styles.bellBtn} onPress={() => navigation.navigate('AlertsStack')}>
+          <Text style={styles.bellIcon}>🔔</Text>
+        </TouchableOpacity>
       </View>
 
       {/* Selector de mes */}
@@ -138,6 +141,8 @@ const styles = StyleSheet.create({
   header: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', padding: 20, paddingTop: 56 },
   greeting: { fontSize: FONTS.size.xl, fontWeight: 'bold', color: COLORS.text },
   subGreeting: { fontSize: FONTS.size.sm, color: COLORS.textLight, marginTop: 2 },
+  bellBtn: { width: 42, height: 42, borderRadius: 21, backgroundColor: COLORS.white, justifyContent: 'center', alignItems: 'center', borderWidth: 1, borderColor: COLORS.border },
+  bellIcon: { fontSize: 20 },
   monthsRow: { paddingHorizontal: 16, marginBottom: 16 },
   monthChip: {
     paddingHorizontal: 14, paddingVertical: 7, borderRadius: 20,

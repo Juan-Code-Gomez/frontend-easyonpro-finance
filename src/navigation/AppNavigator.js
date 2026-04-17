@@ -10,6 +10,10 @@ import NewTransactionScreen from '../screens/Transactions/NewTransactionScreen';
 import NewDebtScreen from '../screens/Debts/NewDebtScreen';
 import NewFinancingScreen from '../screens/Financing/NewFinancingScreen';
 import FinancingDetailScreen from '../screens/Financing/FinancingDetailScreen';
+import NewSavingsScreen from '../screens/Savings/NewSavingsScreen';
+import SavingsDetailScreen from '../screens/Savings/SavingsDetailScreen';
+import BudgetsScreen from '../screens/Budgets/BudgetsScreen';
+import AlertsScreen from '../screens/Alerts/AlertsScreen';
 import MainTabs from './MainTabs';
 import { COLORS } from '../constants/theme';
 import useAuthStore from '../store/authStore';
@@ -53,6 +57,10 @@ export default function AppNavigator() {
             <Stack.Screen name="NewDebt" component={NewDebtScreen} options={{ presentation: 'modal' }} />
             <Stack.Screen name="NewFinancing" component={NewFinancingScreen} options={{ presentation: 'modal' }} />
             <Stack.Screen name="FinancingDetail" component={FinancingDetailScreen} />
+            <Stack.Screen name="NewSavings" component={NewSavingsScreen} options={{ presentation: 'modal' }} />
+            <Stack.Screen name="SavingsDetail" component={SavingsDetailScreen} />
+            <Stack.Screen name="Budgets" component={BudgetsScreen} />
+            <Stack.Screen name="AlertsStack" component={AlertsScreen} />
           </>
         ) : (
           <>

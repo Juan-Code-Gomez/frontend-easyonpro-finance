@@ -5,8 +5,10 @@ import { COLORS, FONTS } from '../constants/theme';
 
 import DashboardScreen from '../screens/Dashboard/DashboardScreen';
 import TransactionsScreen from '../screens/Transactions/TransactionsScreen';
-import DebtsScreen from '../screens/Debts/DebtsScreen';
 import FinancingsScreen from '../screens/Financing/FinancingsScreen';
+import DebtsScreen from '../screens/Debts/DebtsScreen';
+import SavingsScreen from '../screens/Savings/SavingsScreen';
+import ReportsScreen from '../screens/Reports/ReportsScreen';
 
 const Tab = createBottomTabNavigator();
 
@@ -34,38 +36,19 @@ export default function MainTabs() {
         tabBarInactiveTintColor: COLORS.textLight,
       }}
     >
-      <Tab.Screen
-        name="Dashboard"
-        component={DashboardScreen}
-        options={{
-          tabBarLabel: 'Inicio',
-          tabBarIcon: ({ focused }) => <TabIcon emoji="🏠" focused={focused} />,
-        }}
-      />
-      <Tab.Screen
-        name="Transactions"
-        component={TransactionsScreen}
-        options={{
-          tabBarLabel: 'Movimientos',
-          tabBarIcon: ({ focused }) => <TabIcon emoji="💳" focused={focused} />,
-        }}
-      />
-      <Tab.Screen
-        name="Debts"
-        component={DebtsScreen}
-        options={{
-          tabBarLabel: 'Deudas',
-          tabBarIcon: ({ focused }) => <TabIcon emoji="💳" focused={focused} />,
-        }}
-      />
-      <Tab.Screen
-        name="Financings"
-        component={FinancingsScreen}
-        options={{
-          tabBarLabel: 'Financiam.',
-          tabBarIcon: ({ focused }) => <TabIcon emoji="📦" focused={focused} />,
-        }}
-      />
+      <Tab.Screen name="Dashboard" component={DashboardScreen}
+        options={{ tabBarLabel: 'Inicio', tabBarIcon: ({ focused }) => <TabIcon emoji="🏠" focused={focused} /> }} />
+      <Tab.Screen name="Transactions" component={TransactionsScreen}
+        options={{ tabBarLabel: 'Gastos', tabBarIcon: ({ focused }) => <TabIcon emoji="💳" focused={focused} /> }} />
+      <Tab.Screen name="Debts" component={DebtsScreen}
+        options={{ tabBarLabel: 'Deudas', tabBarIcon: ({ focused }) => <TabIcon emoji="📋" focused={focused} /> }} />
+      <Tab.Screen name="Financings" component={FinancingsScreen}
+        options={{ tabBarLabel: 'Financiam.', tabBarIcon: ({ focused }) => <TabIcon emoji="📦" focused={focused} /> }} />
+      <Tab.Screen name="Savings" component={SavingsScreen}
+        options={{ tabBarLabel: 'Ahorros', tabBarIcon: ({ focused }) => <TabIcon emoji="🏦" focused={focused} /> }} />
+      <Tab.Screen name="Reports" component={ReportsScreen}
+        options={{ tabBarLabel: 'Reportes', tabBarIcon: ({ focused }) => <TabIcon emoji="📊" focused={focused} /> }} />
     </Tab.Navigator>
   );
 }
+
